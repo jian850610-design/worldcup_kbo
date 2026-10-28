@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>야구선수 이상형 월드컵</title>
+  <style>
+    :root { color-scheme: light; --red: #d52340; --ink: #202827; --muted: #74807d; --line: #dce3df; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; color: var(--ink); background: repeating-linear-gradient(90deg, transparent 0 79px, #173d2704 79px 80px), #f5f7f6; font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; }
+    button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    button:focus-visible { outline: 3px solid #228562; outline-offset: 5px; }
+    main { max-width: 860px; padding: 32px 24px; margin: auto; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 22px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; }
+    .ball { width: 25px; height: 25px; border-radius: 50%; border: 1px solid #d5dad7; background: #fff; position: relative; overflow: hidden; }
+    .ball::before, .ball::after { content: ""; position: absolute; width: 19px; height: 28px; top: -3px; border: 2px dashed var(--red); border-radius: 50%; }
+    .ball::before { left: -12px; } .ball::after { right: -12px; }
+    .edition { color: var(--muted); font: 11px Georgia, serif; }
+    .heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; padding: 30px 0 20px; }
+    .round { color: var(--red); font-size: 12px; font-weight: bold; margin-bottom: 8px; }
+    h1 { font-size: 28px; margin: 0; letter-spacing: 0; }
+    .counter { color: var(--muted); font: bold 15px "Courier New", monospace; white-space: nowrap; }
+    .progress { height: 3px; background: #e0e6e2; margin-bottom: 24px; }
+    .progress span { display: block; height: 100%; background: var(--red); transition: width .15s ease; }
+    .match { display: grid; grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr); align-items: center; }
+    .versus { text-align: center; font: italic bold 16px Georgia, serif; color: #8d9993; }
+    .player { padding: 0; min-width: 0; text-align: left; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: white; transition: border-color .15s, box-shadow .15s; }
+    .player:hover { border-color: var(--red); box-shadow: 0 8px 24px #172c2510; }
+    .portrait { position: relative; display: block; aspect-ratio: 1 / 1; background: repeating-linear-gradient(135deg, transparent 0 36px, #ffffff60 36px 72px), #e5ece8; overflow: hidden; }
+    .player:nth-child(3) .portrait { background-color: #e9e9ef; }
+    .portrait img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; position: relative; z-index: 1; }
+    .fallback { position: absolute; inset: 0; display: grid; place-items: center; color: #7d9185; font-size: 36px; font-weight: 900; }
+    .info { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 20px; }
+    .name { font-size: 23px; font-weight: 900; display: block; overflow-wrap: anywhere; }
+    .position { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; }
+    .select-icon { color: var(--red); flex: 0 0 20px; width: 20px; height: 20px; }
+    .bottom { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 22px; }
+    .count { color: var(--muted); font-size: 12px; }
+    .undo { background: transparent; border: 1px solid var(--line); border-radius: 4px; display: flex; align-items: center; gap: 7px; color: var(--ink); padding: 9px 12px; font-size: 12px; }
+    .undo svg { width: 15px; height: 15px; }
+    .undo:disabled { opacity: .35; cursor: default; }
+    .winner { text-align: center; padding: 4px 0; }
+    .winner .portrait { width: min(320px, 85%); margin: 0 auto 20px; border-bottom: 3px solid var(--red); }
+    .winner h2 { font-size: 32px; margin: 0 0 8px; }
+    .winner .position { margin-bottom: 24px; }
+    .restart { border: 0; border-radius: 4px; background: var(--red); color: #fff; padding: 13px 22px; font-weight: 700; }
+    footer { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 16px; color: var(--muted); font-size: 10px; line-height: 1.8; }
+    footer details { margin-top: 8px; }
+    footer summary { cursor: pointer; }
+    footer ul { padding-left: 18px; }
+    footer a { color: #356e59; margin-left: 8px; }
+    [hidden] { display: none !important; }
+    @media (max-width: 560px) {
+      main { padding: 22px 16px; }
+      h1 { font-size: 23px; }
+      .heading { padding-top: 26px; }
+      .match { grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); }
+      .versus { font-size: 12px; }
+      .info { padding: 15px 11px; }
+      .name { font-size: 18px; }
+      .select-icon { display: none; }
+      .portrait { aspect-ratio: 3 / 4; }
+      .winner .portrait { aspect-ratio: 1; width: 240px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header><div class="brand"><span class="ball" aria-hidden="true"></span>야구선수 이상형 월드컵</div><span class="edition">KBO / 16</span></header>
+    <section class="heading" aria-live="polite"><div><div class="round" id="round"></div><h1 id="title">나의 최애 선수는?</h1></div><div class="counter" id="counter"></div></section>
+    <div class="progress" role="progressbar" aria-label="선택 진행률" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0"><span id="bar"></span></div>
+    <section class="match" id="match" aria-label="선수 대결"></section>
+    <section class="winner" id="winner" aria-label="우승 결과" hidden></section>
+    <div class="bottom"><span class="count" id="count"></span><button class="undo" id="undo" type="button" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 4-6 6 6 6M3 10h10a7 7 0 0 1 7 7v3"/></svg>선택 취소</button></div>
+    <footer>선수 사진: 구단 공식 홈페이지 · 네이버 스포츠 · KBO · 비공식 팬 게임<details><summary>선수·사진 확인 출처 · 2026-10-28</summary><ul id="sources"></ul></details></footer>
+  </main>
+  <script>
+    (() => {
+      'use strict';
+      const players = [
+        { name: '김도영', position: 'KIA · 내야수', id: 52605, wiki: '김도영_(2003년)', type: 'Hitter', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_5_C.png', imageSource: 'https://tigers.co.kr/players/infielder/52605' },
+        { name: '양현종', position: 'KIA · 투수', id: 77637, wiki: '양현종', type: 'Pitcher', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_54_C.png', imageSource: 'https://tigers.co.kr/players/pitcher/77637' },
+        { name: '김선빈', position: 'KIA · 내야수', id: 78603, wiki: '김선빈_(야구_선수)', type: 'Hitter', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_3_C.png', imageSource: 'https://tigers.co.kr/players/infielder/78603' },
+        { name: '나성범', position: 'KIA · 외야수', id: 62947, wiki: '나성범', type: 'Hitter', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_47_C.png', imageSource: 'https://tigers.co.kr/players/outfielder/62947' },
+        { name: '구자욱', position: '삼성 · 외야수', id: 62404, wiki: '구자욱', type: 'Hitter', image: 'https://sports-phinf.pstatic.net/player/kbo/default/62404.png', imageSource: 'https://sports-phinf.pstatic.net/player/kbo/default/62404.png' },
+        { name: '원태인', position: '삼성 · 투수', id: 69446, wiki: '원태인', type: 'Pitcher', image: 'https://sports-phinf.pstatic.net/player/kbo/default/69446.png', imageSource: 'https://sports-phinf.pstatic.net/player/kbo/default/69446.png' },
+        { name: '문동주', position: '한화 · 투수', id: 52701, wiki: '문동주_(야구_선수)', type: 'Pitcher', image: 'https://sports-phinf.pstatic.net/player/kbo/default/52701.png', imageSource: 'https://sports-phinf.pstatic.net/player/kbo/default/52701.png' },
+        { name: '노시환', position: '한화 · 내야수', id: 69737, wiki: '노시환', type: 'Hitter', image: 'https://sports-phinf.pstatic.net/player/kbo/default/69737.png', imageSource: 'https://sports-phinf.pstatic.net/player/kbo/default/69737.png' },
+        { name: '최정', position: 'SSG · 내야수', wiki: '최정_(야구_선수)' },
+        { name: '양의지', position: '두산 · 포수', wiki: '양의지' },
+        { name: '강백호', position: 'KT · 내야수', wiki: '강백호_(야구_선수)' },
+        { name: '홍창기', position: 'LG · 외야수', wiki: '홍창기' },
+        { name: '박건우', position: 'NC · 외야수', wiki: '박건우_(야구_선수)' },
+        { name: '전준우', position: '롯데 · 외야수', wiki: '전준우' },
+        { name: '송성문', position: '키움 · 내야수', wiki: '송성문' },
+        { name: '고영표', position: 'KT · 투수', wiki: '고영표' }
+      ];
+      const byId = id => document.getElementById(id);
+      const totalMatches = players.length - 1;
+      const photo = player => 'https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/person/middle/2026/' + player.id + '.jpg';
+      let round = [], winners = [], matchIndex = 0, champion = null, history = [];
+      function portrait(player) {
+        const frame = document.createElement('span');
+        frame.className = 'portrait';
+        const fallback = document.createElement('span');
+        fallback.className = 'fallback'; fallback.textContent = player.name;
+        fallback.setAttribute('aria-hidden', 'true');
+        if (player.image || player.id) {
+          const image = new Image(); image.alt = player.name;
+          image.addEventListener('load', () => { fallback.hidden = true; });
+          image.addEventListener('error', () => {
+            if (player.id && image.src !== photo(player)) image.src = photo(player);
+            else image.hidden = true;
+          });
+          image.src = player.image || photo(player);
+          frame.append(fallback, image);
+        } else {
+          frame.append(fallback);
+        }
+        return frame;
+      }
+      function choose(player) {
+        if (champion) return;
+        history.push({ round: [...round], winners: [...winners], matchIndex, champion });
+        winners.push(player); matchIndex++;
+        if (matchIndex === round.length / 2) {
+          if (winners.length === 1) champion = winners[0];
+          else { round = winners; winners = []; matchIndex = 0; }
+        }
+        render();
+      }
+      function render() {
+        const done = history.length;
+        byId('bar').style.width = done / totalMatches * 100 + '%';
+        document.querySelector('[role="progressbar"]').setAttribute('aria-valuenow', done);
+        byId('round').textContent = champion ? '최종 우승' : (round.length === 2 ? '결승' : round.length + '강');
+        byId('title').textContent = champion ? '당신의 최애 선수!' : '나의 최애 선수는?';
+        byId('counter').textContent = champion ? 'WINNER' : (matchIndex + 1) + ' / ' + round.length / 2;
+        byId('count').textContent = done + ' / ' + totalMatches + ' 선택 완료';
+        byId('undo').disabled = !done;
+        byId('match').hidden = !!champion; byId('winner').hidden = !champion;
+        byId('match').replaceChildren(); byId('winner').replaceChildren();
+        if (champion) {
+          const name = document.createElement('h2'); name.textContent = champion.name;
+          const position = document.createElement('span'); position.className = 'position'; position.textContent = champion.position;
+          const restart = document.createElement('button'); restart.type = 'button'; restart.className = 'restart'; restart.textContent = '다시 시작'; restart.addEventListener('click', start);
+          byId('winner').append(portrait(champion), name, position, restart);
+          restart.focus({ preventScroll: true });
+          return;
+        }
+        round.slice(matchIndex * 2, matchIndex * 2 + 2).forEach((player, index) => {
+          if (index) { const vs = document.createElement('div'); vs.className = 'versus'; vs.textContent = 'vs'; vs.setAttribute('aria-hidden', 'true'); byId('match').append(vs); }
+          const button = document.createElement('button'); button.className = 'player'; button.type = 'button'; button.setAttribute('aria-label', player.name + ' 선택');
+          const info = document.createElement('span'); info.className = 'info';
+          const text = document.createElement('span');
+          const name = document.createElement('span'); name.className = 'name'; name.textContent = player.name;
+          const position = document.createElement('span'); position.className = 'position'; position.textContent = player.position;
+          text.append(name, position); info.append(text);
+          const icon = document.createElement('span'); icon.className = 'select-icon'; icon.textContent = '♡'; icon.setAttribute('aria-hidden', 'true'); info.append(icon);
+          button.append(portrait(player), info); button.addEventListener('click', () => choose(player)); byId('match').append(button);
+        });
+        if (done) byId('match').querySelector('button').focus({ preventScroll: true });
+      }
+      function start() {
+        round = [...players];
+        for (let index = round.length - 1; index > 0; index--) {
+          const other = Math.floor(Math.random() * (index + 1));
+          [round[index], round[other]] = [round[other], round[index]];
+        }
+        winners = []; matchIndex = 0; champion = null; history = []; render();
+      }
+      byId('undo').addEventListener('click', () => {
+        if (!history.length) return;
+        const previous = history.pop();
+        round = previous.round; winners = previous.winners; matchIndex = previous.matchIndex; champion = previous.champion; render();
+      });
+      for (const player of players) {
+        const item = document.createElement('li'); item.textContent = player.name;
+        const wiki = document.createElement('a'); wiki.textContent = '위키백과';
+        wiki.href = 'https://ko.wikipedia.org/wiki/' + encodeURIComponent(player.wiki);
+        wiki.target = '_blank'; wiki.rel = 'noopener noreferrer';
+        item.append(wiki);
+        if (player.id && player.type) {
+          const profile = document.createElement('a'); profile.textContent = 'KBO 프로필·사진';
+          profile.href = 'https://www.koreabaseball.com/Record/Player/' + player.type + 'Detail/Total.aspx?playerId=' + player.id;
+          profile.target = '_blank'; profile.rel = 'noopener noreferrer';
+          item.append(profile);
+        }
+        byId('sources').append(item);
+        if (player.imageSource) {
+          const source = document.createElement('a'); source.textContent = '원본 사진'; source.href = player.imageSource;
+          source.target = '_blank'; source.rel = 'noopener noreferrer'; item.append(source);
+        }
+      }
+      start();
+    })();
+  </script>
+</body>
+</html>
