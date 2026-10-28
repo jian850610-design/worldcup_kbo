@@ -23,18 +23,27 @@
     .counter { color: var(--muted); font: bold 15px "Courier New", monospace; white-space: nowrap; }
     .progress { height: 3px; background: #e0e6e2; margin-bottom: 24px; }
     .progress span { display: block; height: 100%; background: var(--red); transition: width .15s ease; }
-    .match { display: grid; grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr); align-items: center; }
+    .match { display: grid; grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr); align-items: start; }
     .versus { text-align: center; font: italic bold 16px Georgia, serif; color: #8d9993; }
     .player { padding: 0; min-width: 0; text-align: left; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: white; transition: border-color .15s, box-shadow .15s; }
     .player:hover { border-color: var(--red); box-shadow: 0 8px 24px #172c2510; }
     .portrait { position: relative; display: block; aspect-ratio: 1 / 1; background: repeating-linear-gradient(135deg, transparent 0 36px, #ffffff60 36px 72px), #e5ece8; overflow: hidden; }
     .player:nth-child(3) .portrait { background-color: #e9e9ef; }
-    .portrait img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; position: relative; z-index: 1; }
+    .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 12%; position: relative; z-index: 1; }
     .fallback { position: absolute; inset: 0; display: grid; place-items: center; color: #7d9185; font-size: 36px; font-weight: 900; }
     .info { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 20px; }
     .name { font-size: 23px; font-weight: 900; display: block; overflow-wrap: anywhere; }
     .position { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; }
     .select-icon { color: var(--red); flex: 0 0 20px; width: 20px; height: 20px; }
+    .player-details { display: block; text-align: left; font-size: 12px; line-height: 1.6; }
+    .detail-section { display: block; padding: 12px 20px; border-top: 1px solid var(--line); }
+    .detail-heading { display: block; font-size: 12px; font-weight: 800; margin-bottom: 6px; }
+    .detail-row { display: flex; flex-wrap: wrap; gap: 4px 10px; padding: 2px 0; }
+    .detail-label { flex: 0 0 54px; color: var(--muted); }
+    .detail-value { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+    .detail-note { display: block; color: var(--muted); overflow-wrap: anywhere; }
+    .detail-award { display: block; margin-bottom: 3px; overflow-wrap: anywhere; }
+    .winner .player-details { max-width: 400px; margin: 0 auto 20px; }
     .bottom { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 22px; }
     .count { color: var(--muted); font-size: 12px; }
     .undo { background: transparent; border: 1px solid var(--line); border-radius: 4px; display: flex; align-items: center; gap: 7px; color: var(--ink); padding: 9px 12px; font-size: 12px; }
@@ -60,6 +69,9 @@
       .info { padding: 15px 11px; }
       .name { font-size: 18px; }
       .select-icon { display: none; }
+      .detail-section { padding: 10px 11px; }
+      .detail-label { flex-basis: 44px; }
+      .player-details { font-size: 11px; }
       .portrait { aspect-ratio: 3 / 4; }
       .winner .portrait { aspect-ratio: 1; width: 240px; }
     }
@@ -68,18 +80,20 @@
 </head>
 <body>
   <main>
-    <header><div class="brand"><span class="ball" aria-hidden="true"></span>야구선수 이상형 월드컵</div><span class="edition">KBO / 16</span></header>
+    <header><div class="brand"><span class="ball" aria-hidden="true"></span>야구선수 이상형 월드컵</div><span class="edition">KBO / 2026</span></header>
     <section class="heading" aria-live="polite"><div><div class="round" id="round"></div><h1 id="title">나의 최애 선수는?</h1></div><div class="counter" id="counter"></div></section>
-    <div class="progress" role="progressbar" aria-label="선택 진행률" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0"><span id="bar"></span></div>
+    <div class="progress" role="progressbar" aria-label="16강 경기 진행률" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0"><span id="bar"></span></div>
     <section class="match" id="match" aria-label="선수 대결"></section>
     <section class="winner" id="winner" aria-label="우승 결과" hidden></section>
     <div class="bottom"><span class="count" id="count"></span><button class="undo" id="undo" type="button" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 4-6 6 6 6M3 10h10a7 7 0 0 1 7 7v3"/></svg>선택 취소</button></div>
-    <footer>선수 사진: 구단 공식 홈페이지 · 네이버 스포츠 · KBO · 비공식 팬 게임<details><summary>선수·사진 확인 출처 · 2026-10-28</summary><ul id="sources"></ul></details></footer>
+    <footer>프로필·기록: 나무위키 · 사진: 원문별 출처 · 비공식 팬 게임<details><summary>선수 정보·사진 확인 출처 · 2026-10-28</summary><ul id="sources"></ul></details></footer>
   </main>
+  <script src="roster.js"></script>
+  <script src="profiles.js"></script>
   <script>
     (() => {
       'use strict';
-      const players = [
+      const curatedPlayers = [
         { name: '김도영', position: 'KIA · 내야수', id: 52605, wiki: '김도영_(2003년)', type: 'Hitter', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_5_C.png', imageSource: 'https://tigers.co.kr/players/infielder/52605' },
         { name: '양현종', position: 'KIA · 투수', id: 77637, wiki: '양현종', type: 'Pitcher', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_54_C.png', imageSource: 'https://tigers.co.kr/players/pitcher/77637' },
         { name: '김선빈', position: 'KIA · 내야수', id: 78603, wiki: '김선빈_(야구_선수)', type: 'Hitter', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_3_C.png', imageSource: 'https://tigers.co.kr/players/infielder/78603' },
@@ -88,57 +102,188 @@
         { name: '원태인', position: '삼성 · 투수', id: 69446, wiki: '원태인', type: 'Pitcher', image: 'https://sports-phinf.pstatic.net/player/kbo/default/69446.png', imageSource: 'https://sports-phinf.pstatic.net/player/kbo/default/69446.png' },
         { name: '문동주', position: '한화 · 투수', id: 52701, wiki: '문동주_(야구_선수)', type: 'Pitcher', image: 'https://sports-phinf.pstatic.net/player/kbo/default/52701.png', imageSource: 'https://sports-phinf.pstatic.net/player/kbo/default/52701.png' },
         { name: '노시환', position: '한화 · 내야수', id: 69737, wiki: '노시환', type: 'Hitter', image: 'https://sports-phinf.pstatic.net/player/kbo/default/69737.png', imageSource: 'https://sports-phinf.pstatic.net/player/kbo/default/69737.png' },
-        { name: '최정', position: 'SSG · 내야수', wiki: '최정_(야구_선수)' },
-        { name: '양의지', position: '두산 · 포수', wiki: '양의지' },
-        { name: '강백호', position: 'KT · 내야수', wiki: '강백호_(야구_선수)' },
-        { name: '홍창기', position: 'LG · 외야수', wiki: '홍창기' },
-        { name: '박건우', position: 'NC · 외야수', wiki: '박건우_(야구_선수)' },
-        { name: '전준우', position: '롯데 · 외야수', wiki: '전준우' },
-        { name: '송성문', position: '키움 · 내야수', wiki: '송성문' },
-        { name: '고영표', position: 'KT · 투수', wiki: '고영표' }
+        { name: '양의지', position: '두산 · 포수', wiki: '양의지', image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/151208._2015_KBO_%EA%B3%A8%EB%93%A0_%EA%B8%80%EB%9F%AC%EB%B8%8C_%EC%8B%9C%EC%83%81%EC%8B%9D._62.jpg/330px-151208._2015_KBO_%EA%B3%A8%EB%93%A0_%EA%B8%80%EB%9F%AC%EB%B8%8C_%EC%8B%9C%EC%83%81%EC%8B%9D._62.jpg?utm_source=ko.wikipedia.org&utm_campaign=api&utm_content=thumbnail', imageSource: 'https://ko.wikipedia.org/wiki/%EC%96%91%EC%9D%98%EC%A7%80' },
+        { name: '강백호', position: 'KT · 내야수', wiki: '강백호_(야구_선수)', image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Kang_Baek-Ho_2019_Premier_12.jpg/330px-Kang_Baek-Ho_2019_Premier_12.jpg?utm_source=ko.wikipedia.org&utm_campaign=api&utm_content=thumbnail', imageSource: 'https://ko.wikipedia.org/wiki/%EA%B0%95%EB%B0%B1%ED%98%B8_(%EC%95%BC%EA%B5%AC_%EC%84%A0%EC%88%98)' },
+        { name: '고영표', position: 'KT · 투수', wiki: '고영표', image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/%EA%B3%A0%EC%98%81%ED%91%9C_%EC%95%BC%EA%B5%AC_%EC%84%A0%EC%88%98.jpg/330px-%EA%B3%A0%EC%98%81%ED%91%9C_%EC%95%BC%EA%B5%AC_%EC%84%A0%EC%88%98.jpg?utm_source=ko.wikipedia.org&utm_campaign=api&utm_content=thumbnail', imageSource: 'https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%98%81%ED%91%9C' },
+        { name: '박종혁', position: 'KIA · 내야수', id: 56634, type: 'Hitter', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_28_C.png', imageSource: 'https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=56634' },
+        { name: '박준현', position: '키움 · 투수', id: 56318, type: 'Pitcher' },
+        { name: '신재인', position: 'NC · 내야수', id: 56909, type: 'Hitter' },
+        { name: '오재원', position: '한화 · 외야수', id: 56754, type: 'Hitter' },
+        { name: '신동건', position: '롯데 · 투수', id: 56567, type: 'Pitcher' },
+        { name: '김민준', position: 'SSG · 투수', id: 56840, type: 'Pitcher' },
+        { name: '박지훈', position: 'KT · 투수', id: 56066, type: 'Pitcher' },
+        { name: '김주오', position: '두산 · 외야수', id: 56266, type: 'Hitter' },
+        { name: '양우진', position: 'LG · 투수', id: 56165, type: 'Pitcher' },
+        { name: '이호범', position: '삼성 · 투수', id: 56441, type: 'Pitcher' },
+        { name: '박한결', position: '키움 · 내야수', id: 56304, type: 'Hitter' }
       ];
+      const highResolutionPhotos = {
+        '구자욱': ['2026%2f9%2f202609042023770247_6a9aaa1c23195.jpg', 549658],
+        '원태인': ['2026%2f10%2f202610272226779155_6ae0a68fd29df.jpg', 556492],
+        '문동주': ['2026%2f5%2f202605301013779812_6a1a3dcf27b96.jpeg', 533321],
+        '노시환': ['2026%2f9%2f202609180918771505_6aac83684dc13.jpg', 551811],
+        '박준현': ['2025%2f9%2f202509171649778103_68ca67f0c86b2.jpg', 506951],
+        '신재인': ['2025%2f9%2f202509171531770089_68ca55b8df4fd.jpg', 506923],
+        '오재원': ['2025%2f9%2f202509171709771328_68ca6c9e8a717.jpg', 506957],
+        '신동건': ['2025%2f9%2f202509171540774709_68ca57efce6e1.jpg', 506928],
+        '김민준': ['2025%2f9%2f202509171548774736_68ca59cdee021.jpg', 506935],
+        '박지훈': ['2025%2f9%2f202509171549772388_68ca59e1a5b24.jpg', 506937],
+        '김주오': ['2025%2f9%2f202509171555770718_68ca5b7c77426.jpg', 506943],
+        '양우진': ['2026%2f7%2f202607262135777425_6a65ff2814313.jpg', 543713],
+        '박한결': ['2026%2f3%2f202603231503772222_69c0d7981c638.jpg', 520664]
+      };
+      for (const player of curatedPlayers) {
+        const source = highResolutionPhotos[player.name];
+        if (!source) continue;
+        player.image = 'https://6ptotvmi5753.edge.naverncp.com/KBO_FILE/photo%2fimages%2f' + source[0];
+        player.imageSource = 'https://www.koreabaseball.com/MediaNews/News/KboPhoto/View.aspx?bdSe=' + source[1];
+      }
+      const positions = ['투수', '포수', '내야수', '외야수'];
+      const players = window.KBO_ROSTER.teams.flatMap(([team, groups]) => groups.flatMap((group, index) => group.map(([name, number]) => {
+        const position = team + ' · ' + positions[index];
+        const curated = curatedPlayers.find(player => player.name === name && player.position === position)
+          || (name === '강백호' ? curatedPlayers.find(player => player.name === name) : null);
+        return { ...curated, name, number, team, position, key: team + ':' + name + ':' + number, registered: true };
+      })));
+      for (const player of curatedPlayers.filter(player => player.id >= 56000 && player.id < 57000)) {
+        if (players.some(candidate => candidate.name === player.name && candidate.position === player.position)) continue;
+        players.push({ ...player, team: player.position.split(' · ')[0], key: 'draft:' + player.id, registered: false });
+      }
+      for (const [team, name, path, articleId] of window.KBO_ROSTER.fallbackPhotos) {
+        const player = players.find(candidate => candidate.team === team && candidate.name === name);
+        if (player && !player.image) {
+          player.image = 'https://6ptotvmi5753.edge.naverncp.com/KBO_FILE/photo%2fimages%2f' + path;
+          player.imageSource = 'https://www.koreabaseball.com/MediaNews/News/KboPhoto/View.aspx?bdSe=' + articleId;
+        }
+      }
+      for (const [team, name, image, imageSource] of window.KBO_ROSTER.portraits) {
+        const player = players.find(candidate => candidate.team === team && candidate.name === name);
+        if (player) Object.assign(player, { image, imageSource, photoApproved: window.KBO_ROSTER.verifiedPortraits.includes(team + ':' + name) });
+      }
       const byId = id => document.getElementById(id);
-      const totalMatches = players.length - 1;
-      const photo = player => 'https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/person/middle/2026/' + player.id + '.jpg';
+      const verifiedImages = new Map();
+      const bracketSize = 16;
+      let eligiblePlayers = [], starting = false;
       let round = [], winners = [], matchIndex = 0, champion = null, history = [];
+      function loadImage(url) {
+        return new Promise(resolve => {
+          const image = new Image();
+          const timeout = setTimeout(() => resolve(null), 12000);
+          image.addEventListener('load', () => {
+            clearTimeout(timeout);
+            resolve(image.naturalWidth > 0 && image.naturalHeight > 0 ? image : null);
+          }, { once: true });
+          image.addEventListener('error', () => { clearTimeout(timeout); resolve(null); }, { once: true });
+          image.src = url;
+        });
+      }
+      async function verifyPhoto(player) {
+        if (verifiedImages.has(player)) return true;
+        let original = null;
+        if (player.image && player.image.startsWith('https://thumb.wikimedia.org/wikipedia/commons/thumb/')) {
+          const url = new URL(player.image);
+          url.hostname = 'upload.wikimedia.org';
+          url.pathname = url.pathname.replace('/commons/thumb/', '/commons/').split('/').slice(0, -1).join('/');
+          url.search = '';
+          original = url.href;
+        }
+        const sources = [...new Set([original, player.image].filter(Boolean))];
+        for (const source of sources) {
+          const image = await loadImage(source);
+          if (image && Math.min(image.naturalWidth, image.naturalHeight) >= 400) { player.image = source; verifiedImages.set(player, image); return true; }
+        }
+        return false;
+      }
       function portrait(player) {
         const frame = document.createElement('span');
         frame.className = 'portrait';
-        const fallback = document.createElement('span');
-        fallback.className = 'fallback'; fallback.textContent = player.name;
-        fallback.setAttribute('aria-hidden', 'true');
-        if (player.image || player.id) {
-          const image = new Image(); image.alt = player.name;
-          image.addEventListener('load', () => { fallback.hidden = true; });
-          image.addEventListener('error', () => {
-            if (player.id && image.src !== photo(player)) image.src = photo(player);
-            else image.hidden = true;
-          });
-          image.src = player.image || photo(player);
-          frame.append(fallback, image);
-        } else {
-          frame.append(fallback);
-        }
+        const image = verifiedImages.get(player);
+        image.alt = player.name;
+        frame.append(image);
         return frame;
       }
+      function getProfile(player) {
+        return window.KBO_PROFILES.players[player.team + ':' + player.name + ':' + player.number]
+          || window.KBO_PROFILES.players[player.team + ':' + player.name] || {};
+      }
+      function profileDetails(player) {
+        const profile = getProfile(player);
+        const container = document.createElement('span'); container.className = 'player-details';
+        function section(title) {
+          const block = document.createElement('span'); block.className = 'detail-section';
+          const heading = document.createElement('span'); heading.className = 'detail-heading'; heading.textContent = title;
+          block.append(heading); container.append(block); return block;
+        }
+        function row(block, label, value) {
+          const line = document.createElement('span'); line.className = 'detail-row';
+          const key = document.createElement('span'); key.className = 'detail-label'; key.textContent = label;
+          const text = document.createElement('span'); text.className = 'detail-value'; text.textContent = value ?? '미확인';
+          line.append(key, text); block.append(line);
+        }
+        const basics = section('프로필');
+        let age = null;
+        if (profile.birthDate) {
+          const [birthYear, birthMonth, birthDay] = profile.birthDate.split('-').map(Number);
+          const [year, month, day] = window.KBO_PROFILES.asOf.split('-').map(Number);
+          age = year - birthYear - (month < birthMonth || (month === birthMonth && day < birthDay) ? 1 : 0);
+        }
+        row(basics, '나이', age === null ? null : '만 ' + age + '세');
+        row(basics, '키', profile.heightCm ? profile.heightCm + ' cm' : null);
+        row(basics, '혈액형', profile.bloodType);
+        row(basics, 'MBTI', profile.mbti);
+        row(basics, '가족관계', profile.family);
+        row(basics, '결혼여부', profile.maritalStatus);
+        row(basics, '자녀수', profile.children === undefined || profile.children === null ? null : profile.children + '명');
+        const awards = section('주요 수상');
+        if (profile.awards?.length) {
+          for (const award of profile.awards) {
+            const text = document.createElement('span'); text.className = 'detail-award'; text.textContent = award; awards.append(text);
+          }
+        } else {
+          const text = document.createElement('span'); text.className = 'detail-note';
+          text.textContent = '확인된 수상 정보 없음'; awards.append(text);
+        }
+        const stats = section('2026 정규시즌');
+        const season = profile.season2026;
+        if (season) {
+          const fields = season.type === 'Pitcher'
+            ? [['경기', 'games'], ['평균자책', 'era'], ['승', 'wins'], ['패', 'losses'], ['탈삼진', 'strikeouts'], ['이닝', 'innings']]
+            : [['경기', 'games'], ['타율', 'average'], ['홈런', 'homeRuns'], ['타점', 'rbi'], ['도루', 'stolenBases'], ['OPS', 'ops']];
+          for (const [label, key] of fields) {
+            if (season[key] !== undefined && season[key] !== null) row(stats, label, season[key]);
+          }
+          if (season.note) {
+            const note = document.createElement('span'); note.className = 'detail-note'; note.textContent = season.note; stats.append(note);
+          }
+        } else {
+          const text = document.createElement('span'); text.className = 'detail-note'; text.textContent = '확인된 2026 기록 없음'; stats.append(text);
+        }
+        return container;
+      }
       function choose(player) {
-        if (champion) return;
+        if (champion || starting) return;
         history.push({ round: [...round], winners: [...winners], matchIndex, champion });
         winners.push(player); matchIndex++;
-        if (matchIndex === round.length / 2) {
+        if (matchIndex === Math.floor(round.length / 2)) {
           if (winners.length === 1) champion = winners[0];
-          else { round = winners; winners = []; matchIndex = 0; }
+          else { round = winners; winners = round.length % 2 ? [round[round.length - 1]] : []; matchIndex = 0; }
         }
         render();
       }
       function render() {
         const done = history.length;
-        byId('bar').style.width = done / totalMatches * 100 + '%';
-        document.querySelector('[role="progressbar"]').setAttribute('aria-valuenow', done);
-        byId('round').textContent = champion ? '최종 우승' : (round.length === 2 ? '결승' : round.length + '강');
+        const stage = round.length === 2 ? '결승' : round.length + '강';
+        const stageMatches = Math.floor(round.length / 2);
+        const completed = champion ? stageMatches : matchIndex;
+        byId('bar').style.width = completed / stageMatches * 100 + '%';
+        const progress = document.querySelector('[role="progressbar"]');
+        progress.setAttribute('aria-valuemax', stageMatches);
+        progress.setAttribute('aria-valuenow', completed);
+        progress.setAttribute('aria-label', stage + ' 경기 진행률');
+        byId('round').textContent = champion ? '최종 우승' : stage;
         byId('title').textContent = champion ? '당신의 최애 선수!' : '나의 최애 선수는?';
-        byId('counter').textContent = champion ? 'WINNER' : (matchIndex + 1) + ' / ' + round.length / 2;
-        byId('count').textContent = done + ' / ' + totalMatches + ' 선택 완료';
+        byId('counter').textContent = champion ? 'WINNER' : (matchIndex + 1) + ' / ' + Math.floor(round.length / 2);
+        byId('count').textContent = champion ? '우승 선정 완료' : stage + ' · ' + stageMatches + '경기 중 ' + completed + '경기 완료';
         byId('undo').disabled = !done;
         byId('match').hidden = !!champion; byId('winner').hidden = !champion;
         byId('match').replaceChildren(); byId('winner').replaceChildren();
@@ -146,7 +291,7 @@
           const name = document.createElement('h2'); name.textContent = champion.name;
           const position = document.createElement('span'); position.className = 'position'; position.textContent = champion.position;
           const restart = document.createElement('button'); restart.type = 'button'; restart.className = 'restart'; restart.textContent = '다시 시작'; restart.addEventListener('click', start);
-          byId('winner').append(portrait(champion), name, position, restart);
+          byId('winner').append(portrait(champion), name, position, profileDetails(champion), restart);
           restart.focus({ preventScroll: true });
           return;
         }
@@ -159,42 +304,104 @@
           const position = document.createElement('span'); position.className = 'position'; position.textContent = player.position;
           text.append(name, position); info.append(text);
           const icon = document.createElement('span'); icon.className = 'select-icon'; icon.textContent = '♡'; icon.setAttribute('aria-hidden', 'true'); info.append(icon);
-          button.append(portrait(player), info); button.addEventListener('click', () => choose(player)); byId('match').append(button);
+          button.append(portrait(player), info, profileDetails(player)); button.addEventListener('click', () => choose(player)); byId('match').append(button);
         });
         if (done) byId('match').querySelector('button').focus({ preventScroll: true });
       }
-      function start() {
-        round = [...players];
-        for (let index = round.length - 1; index > 0; index--) {
-          const other = Math.floor(Math.random() * (index + 1));
-          [round[index], round[other]] = [round[other], round[index]];
+      async function start() {
+        if (starting) return;
+        starting = true;
+        byId('title').textContent = '참가자 사진 확인 중...';
+        byId('round').textContent = '16강';
+        byId('counter').textContent = '';
+        byId('count').textContent = '사진 확인 0 / 16명';
+        byId('undo').disabled = true;
+        byId('winner').hidden = true;
+        byId('match').hidden = false;
+        byId('match').replaceChildren();
+        try {
+          const required = eligiblePlayers.filter(player => ['김도영', '박종혁'].includes(player.name));
+          if (eligiblePlayers.length < bracketSize || required.length !== 2) {
+            showLoadingError('16강 참가자 사진이 부족합니다');
+            return;
+          }
+          const candidates = eligiblePlayers.filter(player => !required.includes(player));
+          for (let index = candidates.length - 1; index > 0; index--) {
+            const other = Math.floor(Math.random() * (index + 1));
+            [candidates[index], candidates[other]] = [candidates[other], candidates[index]];
+          }
+          const selected = [];
+          let pending = [...required, ...candidates.splice(0, bracketSize - required.length)];
+          while (pending.length) {
+            let loaded = selected.length;
+            const checked = await Promise.all(pending.map(async player => {
+              const available = await verifyPhoto(player);
+              if (available) byId('count').textContent = '사진 확인 ' + (++loaded) + ' / 16명';
+              return { player, available };
+            }));
+            if (checked.some(result => required.includes(result.player) && !result.available)) {
+              showLoadingError('김도영·박종혁 사진을 불러오지 못했습니다');
+              return;
+            }
+            selected.push(...checked.filter(result => result.available).map(result => result.player));
+            if (selected.length === bracketSize) break;
+            pending = candidates.splice(0, bracketSize - selected.length);
+          }
+          if (selected.length !== bracketSize) {
+            showLoadingError('불러올 수 있는 사진이 부족합니다');
+            return;
+          }
+          round = selected;
+          for (let index = round.length - 1; index > 0; index--) {
+            const other = Math.floor(Math.random() * (index + 1));
+            [round[index], round[other]] = [round[other], round[index]];
+          }
+          winners = []; matchIndex = 0; champion = null; history = []; render();
+        } finally {
+          starting = false;
         }
-        winners = []; matchIndex = 0; champion = null; history = []; render();
+      }
+      function showLoadingError(message) {
+        byId('title').textContent = message;
+        byId('count').textContent = '';
+        const retry = document.createElement('button');
+        retry.type = 'button'; retry.className = 'restart'; retry.textContent = '다시 불러오기';
+        retry.addEventListener('click', start);
+        byId('match').replaceChildren(retry);
       }
       byId('undo').addEventListener('click', () => {
-        if (!history.length) return;
+        if (starting || !history.length) return;
         const previous = history.pop();
         round = previous.round; winners = previous.winners; matchIndex = previous.matchIndex; champion = previous.champion; render();
       });
-      for (const player of players) {
+      function renderSources() {
+        byId('sources').replaceChildren();
+        for (const player of eligiblePlayers) {
         const item = document.createElement('li'); item.textContent = player.name;
-        const wiki = document.createElement('a'); wiki.textContent = '위키백과';
-        wiki.href = 'https://ko.wikipedia.org/wiki/' + encodeURIComponent(player.wiki);
-        wiki.target = '_blank'; wiki.rel = 'noopener noreferrer';
-        item.append(wiki);
-        if (player.id && player.type) {
-          const profile = document.createElement('a'); profile.textContent = 'KBO 프로필·사진';
-          profile.href = 'https://www.koreabaseball.com/Record/Player/' + player.type + 'Detail/Total.aspx?playerId=' + player.id;
-          profile.target = '_blank'; profile.rel = 'noopener noreferrer';
-          item.append(profile);
+        if (player.wiki) {
+          const wiki = document.createElement('a'); wiki.textContent = '위키백과';
+          wiki.href = 'https://ko.wikipedia.org/wiki/' + encodeURIComponent(player.wiki);
+          wiki.target = '_blank'; wiki.rel = 'noopener noreferrer';
+          item.append(wiki);
+        }
+        for (const [index, url] of (getProfile(player).sources || []).entries()) {
+          const source = document.createElement('a'); source.textContent = index ? '나무위키 기록' : '나무위키 프로필';
+          source.href = url; source.target = '_blank'; source.rel = 'noopener noreferrer';
+          item.append(source);
         }
         byId('sources').append(item);
         if (player.imageSource) {
-          const source = document.createElement('a'); source.textContent = '원본 사진'; source.href = player.imageSource;
+          const source = document.createElement('a'); source.textContent = '사진 출처'; source.href = player.imageSource;
           source.target = '_blank'; source.rel = 'noopener noreferrer'; item.append(source);
         }
       }
-      start();
+      }
+      function initialize() {
+        eligiblePlayers = players.filter(player => player.image && player.photoApproved);
+        renderSources();
+        start();
+      }
+      initialize();
     })();
   </script>
 </body>
