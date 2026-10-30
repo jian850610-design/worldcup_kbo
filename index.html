@@ -209,8 +209,8 @@
       function getProfile(player) {
         const base = window.KBO_PROFILES.players[player.team + ':' + player.name + ':' + player.number]
           || window.KBO_PROFILES.players[player.team + ':' + player.name] || {};
-        const official = window.KBO_VERIFIED_PROFILES.players[player.team + ':' + player.name] || {};
-        const namu = window.KBO_NAMU_PROFILES.players[player.team + ':' + player.name] || {};
+        const official = window.KBO_VERIFIED_PROFILES?.players?.[player.team + ':' + player.name] || {};
+        const namu = window.KBO_NAMU_PROFILES?.players?.[player.team + ':' + player.name] || {};
         return {
           ...base,
           ...official,
