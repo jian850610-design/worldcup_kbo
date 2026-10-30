@@ -292,8 +292,9 @@
         const origin = verifiedImages.get(player).getBoundingClientRect();
         const selection = byId('selection');
         const photo = portrait(player);
-        photo.style.width = origin.width + 'px';
-        photo.style.height = origin.height + 'px';
+        const scale = Math.min(1.5, byId('match').clientWidth / origin.width);
+        photo.style.width = origin.width * scale + 'px';
+        photo.style.height = origin.height * scale + 'px';
         selection.replaceChildren(photo);
         selection.hidden = false;
         byId('undo').disabled = true;
