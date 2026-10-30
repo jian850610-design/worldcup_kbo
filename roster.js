@@ -172,7 +172,7 @@ window.KBO_ROSTER = {
   portraits: [
     ['SSG', '박시후', 'https://i.namu.wiki/i/b6xarF_7n9D1_gC7RBZq_SY8LKO2EGR6rXf6xmcnwtBDcd4xOAvrIStm2Oo-wEt39gLXpCmsXGxxooRU6vTa7Y6L4rrcjq14KsF2nUINDBYxSxJfQzBad9joBUjxa_8_zb6NyZ8-fqvx1jDZ_wuFBw.webp', 'https://namu.wiki/w/%EB%B0%95%EC%8B%9C%ED%9B%84(2001)'],
     ['롯데', '전민재', 'https://i.namu.wiki/i/ZR4yXBJk3vj4qT43Q3jVwGyR3_-FYkjLuwX3pqvZcNIujyZ4fxtvnJTuc1Gc3RArUBAbVr2_xMZcmiySibj3f_5YQaQwoUm9OAajkGLyRgkuhBsGPws03VPscFsmQvfN6WIe4smxT1fWWdJpd5aAcQ.webp', 'https://namu.wiki/w/%EC%A0%84%EB%AF%BC%EC%9E%AC'],
-    ['KIA', '김도영', 'https://imgnews.naver.net/image/025/2024/12/11/0003406941_002_20241211054746328.jpg', 'https://news.naver.com/main/read.naver?oid=025&aid=0003406941'],
+    ['KIA', '김도영', 'https://imgnews.pstatic.net/image/108/2024/11/26/0003285433_005_20241126175209143.jpg', 'https://m.sports.naver.com/kbaseball/article/108/0003285433'],
     ['KIA', '양현종', 'https://imgnews.naver.net/image/410/2017/12/08/0000424874_001_20171208213535638.jpg', 'https://news.naver.com/main/read.naver?oid=410&aid=0000424874'],
     ['KIA', '김선빈', 'https://imgnews.naver.net/image/117/2017/12/13/201712131758882072_1_20171213175922437.jpg', 'https://news.naver.com/main/read.naver?oid=117&aid=0002990066'],
     ['KIA', '나성범', 'https://imgnews.naver.net/image/076/2017/12/13/2017121301001073300075691_20171213165451195.jpg', 'https://news.naver.com/main/read.naver?oid=076&aid=0003191985'],
