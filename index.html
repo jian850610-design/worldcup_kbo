@@ -370,8 +370,10 @@
         byId('match').hidden = false;
         byId('match').replaceChildren();
         try {
-          const required = eligiblePlayers.filter(player => player.team === 'KIA' && ['김도영', '박종혁'].includes(player.name));
-          if (eligiblePlayers.length < bracketSize || required.length !== 2) {
+          const required = eligiblePlayers.filter(player =>
+            (player.team === 'KIA' && ['김도영', '박종혁'].includes(player.name))
+            || (player.team === 'NC' && player.name === '전사민'));
+          if (eligiblePlayers.length < bracketSize || required.length !== 3) {
             showLoadingError('16강 참가자 사진이 부족합니다');
             return;
           }
@@ -390,7 +392,7 @@
               return { player, available };
             }));
             if (checked.some(result => required.includes(result.player) && !result.available)) {
-              showLoadingError('김도영·박종혁 사진을 불러오지 못했습니다');
+              showLoadingError('김도영·박종혁·전사민 사진을 불러오지 못했습니다');
               return;
             }
             selected.push(...checked.filter(result => result.available).map(result => result.player));
