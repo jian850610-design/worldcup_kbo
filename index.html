@@ -443,8 +443,10 @@
           '한화:짐머맨', '한화:화이트', '한화:페라자',
           '키움:유토', '키움:히우라', '키움:데이비슨'
         ]);
+        const excludedPhotos = new Set(['키움:박주홍']);
         eligiblePlayers = players.filter(player => player.image
-          && !foreignPlayers.has(player.team + ':' + player.name));
+          && !foreignPlayers.has(player.team + ':' + player.name)
+          && !excludedPhotos.has(player.team + ':' + player.name));
         renderSources();
         start();
       }
