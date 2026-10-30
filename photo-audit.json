@@ -15,7 +15,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:김진수",
@@ -29,7 +30,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:전민재",
@@ -43,7 +45,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:박준영",
@@ -57,7 +60,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "face_obscured"
     },
     {
       "key": "키움:박준현",
@@ -71,7 +75,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:박주홍",
@@ -85,7 +90,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:배제성",
@@ -99,7 +105,8 @@
           "width": 722,
           "height": 902
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:우규민",
@@ -113,7 +120,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:고영표",
@@ -127,7 +135,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:문용익",
@@ -141,7 +150,8 @@
           "width": 739,
           "height": 923
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:주권",
@@ -155,7 +165,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:손동현",
@@ -169,7 +180,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:오원석",
@@ -183,7 +195,8 @@
           "width": 726,
           "height": 908
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:박영현",
@@ -197,7 +210,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:김민수",
@@ -215,7 +229,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:김정운",
@@ -229,7 +244,8 @@
           "width": 360,
           "height": 450
         }
-      ]
+      ],
+      "decision": "low_resolution"
     },
     {
       "key": "KT:박지훈",
@@ -243,7 +259,8 @@
           "width": 360,
           "height": 450
         }
-      ]
+      ],
+      "decision": "low_resolution"
     },
     {
       "key": "KT:한승택",
@@ -257,7 +274,8 @@
           "width": 1000,
           "height": 1250
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:허경민",
@@ -271,7 +289,8 @@
           "width": 759,
           "height": 949
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:오윤석",
@@ -285,7 +304,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:권동진",
@@ -299,7 +319,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:조대현",
@@ -313,7 +334,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:강현우",
@@ -327,7 +349,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:장준원",
@@ -341,7 +364,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:손민석",
@@ -355,7 +379,8 @@
           "width": 360,
           "height": 450
         }
-      ]
+      ],
+      "decision": "low_resolution"
     },
     {
       "key": "KT:류현인",
@@ -369,7 +394,8 @@
           "width": 360,
           "height": 450
         }
-      ]
+      ],
+      "decision": "low_resolution"
     },
     {
       "key": "KT:안현민",
@@ -383,7 +409,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:이정훈",
@@ -397,7 +424,8 @@
           "width": 668,
           "height": 835
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:장진혁",
@@ -411,7 +439,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:유준규",
@@ -425,7 +454,8 @@
           "width": 729,
           "height": 912
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:김상수",
@@ -439,7 +469,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:김현수",
@@ -453,7 +484,8 @@
           "width": 570,
           "height": 712
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:안치영",
@@ -467,7 +499,8 @@
           "width": 800,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:최원준",
@@ -485,7 +518,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:백정현",
@@ -499,7 +533,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KT:김민혁",
@@ -517,7 +552,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:배찬승",
@@ -531,7 +567,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:이승현",
@@ -549,7 +586,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:김재윤",
@@ -563,7 +601,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:김태훈",
@@ -585,7 +624,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:장승현",
@@ -599,7 +639,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:류지혁",
@@ -613,7 +654,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:강민호",
@@ -627,7 +669,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:이해승",
@@ -641,7 +684,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:김영웅",
@@ -655,7 +699,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:이창용",
@@ -669,7 +714,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:이승현",
@@ -687,7 +733,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:박계범",
@@ -701,7 +748,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:전병우",
@@ -715,7 +763,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:이성규",
@@ -729,7 +778,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:김헌곤",
@@ -743,7 +793,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:최형우",
@@ -761,7 +812,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:김성윤",
@@ -775,7 +827,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:김상준",
@@ -793,7 +846,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:구자욱",
@@ -813,7 +867,8 @@
           "width": 80,
           "height": 90
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:박승규",
@@ -827,7 +882,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:김재혁",
@@ -841,7 +897,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:곽도규",
@@ -855,7 +912,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:조상우",
@@ -869,7 +927,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:이태양",
@@ -883,7 +942,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:황동하",
@@ -897,7 +957,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:최지민",
@@ -911,7 +972,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:김태형",
@@ -929,7 +991,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:전상현",
@@ -943,7 +1006,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:김범수",
@@ -957,7 +1021,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:양현종",
@@ -977,7 +1042,8 @@
           "width": 200,
           "height": 68
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:한재승",
@@ -991,7 +1057,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:김태군",
@@ -1005,7 +1072,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:성영탁",
@@ -1019,7 +1087,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:정해영",
@@ -1033,7 +1102,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:주효상",
@@ -1047,7 +1117,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:한준수",
@@ -1061,7 +1132,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:정현창",
@@ -1075,7 +1147,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:김규성",
@@ -1089,7 +1162,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:변우혁",
@@ -1103,7 +1177,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:박민",
@@ -1117,7 +1192,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:김선빈",
@@ -1131,7 +1207,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:하주석",
@@ -1145,7 +1222,8 @@
           "width": 438,
           "height": 412
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:황대인",
@@ -1159,7 +1237,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:박정우",
@@ -1173,7 +1252,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:김도영",
@@ -1187,7 +1267,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:김호령",
@@ -1201,7 +1282,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:나성범",
@@ -1215,7 +1297,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:임찬규",
@@ -1229,7 +1312,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:고우석",
@@ -1243,7 +1327,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:이우찬",
@@ -1257,7 +1342,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:우강훈",
@@ -1271,7 +1357,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:손주영",
@@ -1285,7 +1372,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:김강률",
@@ -1299,7 +1387,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:이상영",
@@ -1313,7 +1402,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:장현식",
@@ -1327,7 +1417,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:이호연",
@@ -1345,7 +1436,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:박재현",
@@ -1359,7 +1451,8 @@
           "width": 1000,
           "height": 963
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:김영우",
@@ -1373,7 +1466,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:김민규",
@@ -1387,7 +1481,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "identity_unverified"
     },
     {
       "key": "LG:박동원",
@@ -1401,7 +1496,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:이정용",
@@ -1423,7 +1519,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:김민수",
@@ -1441,7 +1538,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:이주헌",
@@ -1455,7 +1553,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:문보경",
@@ -1469,7 +1568,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:신민재",
@@ -1483,7 +1583,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:천성호",
@@ -1497,7 +1598,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:문정빈",
@@ -1511,7 +1613,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:구본혁",
@@ -1525,7 +1628,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:이영빈",
@@ -1539,7 +1643,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:박해민",
@@ -1553,7 +1658,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:홍창기",
@@ -1567,7 +1673,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:최원영",
@@ -1581,7 +1688,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:이재원",
@@ -1603,7 +1711,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "LG:문성주",
@@ -1621,7 +1730,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:박치국",
@@ -1635,7 +1745,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:최승용",
@@ -1649,7 +1760,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:이병헌",
@@ -1663,7 +1775,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:서준오",
@@ -1689,7 +1802,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:윤태호",
@@ -1703,7 +1817,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:김기연",
@@ -1717,7 +1832,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:양의지",
@@ -1731,7 +1847,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:김한중",
@@ -1745,7 +1862,8 @@
           "width": 312,
           "height": 330
         }
-      ]
+      ],
+      "decision": "low_resolution"
     },
     {
       "key": "두산:윤준호",
@@ -1759,7 +1877,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:류현준",
@@ -1773,7 +1892,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:이유찬",
@@ -1787,7 +1907,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:박준순",
@@ -1801,7 +1922,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:강승호",
@@ -1815,7 +1937,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:양석환",
@@ -1829,7 +1952,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:박지훈",
@@ -1851,7 +1975,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:안재석",
@@ -1865,7 +1990,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:박찬호",
@@ -1879,7 +2005,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:손아섭",
@@ -1893,7 +2020,8 @@
           "width": 1000,
           "height": 1283
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:정수빈",
@@ -1907,7 +2035,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:김민석",
@@ -1933,7 +2062,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:전다민",
@@ -1947,7 +2077,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:한두솔",
@@ -1961,7 +2092,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:이건욱",
@@ -1975,7 +2107,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:전영준",
@@ -1989,7 +2122,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:최민준",
@@ -2003,7 +2137,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:문승원",
@@ -2017,7 +2152,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:이로운",
@@ -2031,7 +2167,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:백승건",
@@ -2045,7 +2182,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:김민",
@@ -2059,7 +2197,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:김건우",
@@ -2073,7 +2212,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:김민준",
@@ -2087,7 +2227,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:조형우",
@@ -2101,7 +2242,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:신범수",
@@ -2115,7 +2257,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:안상현",
@@ -2129,7 +2272,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:고명준",
@@ -2143,7 +2287,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:박성한",
@@ -2157,7 +2302,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:안재연",
@@ -2171,7 +2317,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:이지영",
@@ -2185,7 +2332,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:김요셉",
@@ -2199,7 +2347,8 @@
           "width": 500,
           "height": 666
         }
-      ]
+      ],
+      "decision": "identity_unverified"
     },
     {
       "key": "SSG:정준재",
@@ -2213,7 +2362,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:전의산",
@@ -2227,7 +2377,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:홍대인",
@@ -2241,7 +2392,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:채현우",
@@ -2255,7 +2407,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:김재환",
@@ -2269,7 +2422,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:오태곤",
@@ -2283,7 +2437,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:한유섬",
@@ -2297,7 +2452,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:최지훈",
@@ -2311,7 +2467,8 @@
           "width": 1050,
           "height": 1350
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:김정민",
@@ -2329,7 +2486,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "SSG:임근우",
@@ -2343,7 +2501,8 @@
           "width": 700,
           "height": 900
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:김태균",
@@ -2357,7 +2516,8 @@
           "width": 1080,
           "height": 1347
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:현도훈",
@@ -2371,7 +2531,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:박세웅",
@@ -2385,7 +2546,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:구승민",
@@ -2399,7 +2561,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:김원중",
@@ -2421,7 +2584,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:나균안",
@@ -2435,7 +2599,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:윤성빈",
@@ -2449,7 +2614,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:이영재",
@@ -2463,7 +2629,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:유강남",
@@ -2477,7 +2644,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:손성빈",
@@ -2491,7 +2659,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:박건우",
@@ -2505,7 +2674,8 @@
           "width": 1000,
           "height": 1283
         }
-      ]
+      ],
+      "decision": "identity_unverified"
     },
     {
       "key": "롯데:고승민",
@@ -2519,7 +2689,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:이준서",
@@ -2533,7 +2704,8 @@
           "width": 800,
           "height": 600
         }
-      ]
+      ],
+      "decision": "identity_unverified"
     },
     {
       "key": "롯데:최준용",
@@ -2551,7 +2723,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:이호준",
@@ -2565,7 +2738,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "identity_unverified"
     },
     {
       "key": "롯데:김세민",
@@ -2579,7 +2753,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:나승엽",
@@ -2593,7 +2768,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:노진혁",
@@ -2607,7 +2783,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:박승욱",
@@ -2621,7 +2798,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:한태양",
@@ -2639,7 +2817,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:윤동희",
@@ -2653,7 +2832,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:조세진",
@@ -2667,7 +2847,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:장두성",
@@ -2681,7 +2862,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:전준우",
@@ -2695,7 +2877,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:김동혁",
@@ -2709,7 +2892,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:최성영",
@@ -2723,7 +2907,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:신영우",
@@ -2737,7 +2922,8 @@
           "width": 1000,
           "height": 1283
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:송명기",
@@ -2751,7 +2937,8 @@
           "width": 400,
           "height": 400
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:이준혁",
@@ -2765,7 +2952,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:전사민",
@@ -2779,7 +2967,8 @@
           "width": 1000,
           "height": 1283
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:이재학",
@@ -2793,7 +2982,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:손주환",
@@ -2819,7 +3009,8 @@
           "width": 400,
           "height": 400
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:최요한",
@@ -2833,7 +3024,8 @@
           "width": 500,
           "height": 500
         }
-      ]
+      ],
+      "decision": "identity_unverified"
     },
     {
       "key": "NC:안중열",
@@ -2847,7 +3039,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:김태경",
@@ -2865,7 +3058,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:최우석",
@@ -2883,7 +3077,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:김한별",
@@ -2897,7 +3092,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:최정원",
@@ -2915,7 +3111,8 @@
           "width": 1000,
           "height": 1283
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:한재환",
@@ -2929,7 +3126,8 @@
           "width": 1000,
           "height": 1283
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:김주원",
@@ -2943,7 +3141,8 @@
           "width": 1000,
           "height": 1283
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:박민우",
@@ -2957,7 +3156,8 @@
           "width": 1000,
           "height": 1283
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:김휘집",
@@ -2971,7 +3171,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:신재인",
@@ -2985,7 +3186,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:천재환",
@@ -2999,7 +3201,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:권희동",
@@ -3013,7 +3216,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:고준휘",
@@ -3027,7 +3231,8 @@
           "width": 1000,
           "height": 1283
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:오태양",
@@ -3041,7 +3246,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:오장한",
@@ -3055,7 +3261,8 @@
           "width": 1000,
           "height": 1000
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:장유호",
@@ -3069,7 +3276,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:황준서",
@@ -3083,7 +3291,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "NC:박시원",
@@ -3105,7 +3314,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:원종혁",
@@ -3119,7 +3329,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:강재민",
@@ -3133,7 +3344,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:김종수",
@@ -3155,7 +3367,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:주현상",
@@ -3169,7 +3382,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:장규현",
@@ -3183,7 +3397,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "face_obscured"
     },
     {
       "key": "한화:최재훈",
@@ -3197,7 +3412,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:허인서",
@@ -3211,7 +3427,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:강건우",
@@ -3225,7 +3442,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "face_obscured"
     },
     {
       "key": "한화:정은원",
@@ -3239,7 +3457,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:하동준",
@@ -3257,7 +3476,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:박정현",
@@ -3271,7 +3491,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:강백호",
@@ -3285,7 +3506,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:심우준",
@@ -3299,7 +3521,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:노시환",
@@ -3313,7 +3536,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:황영묵",
@@ -3327,7 +3551,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:권광민",
@@ -3341,7 +3566,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:최유빈",
@@ -3359,7 +3585,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:한지윤",
@@ -3373,7 +3600,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:김태연",
@@ -3387,7 +3615,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:문현빈",
@@ -3401,7 +3630,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:김윤하",
@@ -3415,7 +3645,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:조영건",
@@ -3429,7 +3660,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:이원석",
@@ -3443,7 +3675,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:최인호",
@@ -3461,7 +3694,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:김성진",
@@ -3475,7 +3709,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:안우진",
@@ -3489,7 +3724,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:원종현",
@@ -3503,7 +3739,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:박지성",
@@ -3517,7 +3754,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:하영민",
@@ -3531,7 +3769,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:전준표",
@@ -3545,7 +3784,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:김선기",
@@ -3559,7 +3799,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:윤석원",
@@ -3573,7 +3814,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:김시앙",
@@ -3587,7 +3829,8 @@
           "width": 1000,
           "height": 1103
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:김웅빈",
@@ -3601,7 +3844,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:서건창",
@@ -3615,7 +3859,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:임진묵",
@@ -3633,7 +3878,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:김재현",
@@ -3651,7 +3897,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:어준서",
@@ -3665,7 +3912,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:여동욱",
@@ -3679,7 +3927,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:임병욱",
@@ -3693,7 +3942,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:김동헌",
@@ -3711,7 +3961,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:최재영",
@@ -3729,7 +3980,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "키움:이형종",
@@ -3743,7 +3995,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "KIA:박종혁",
@@ -3757,7 +4010,8 @@
           "width": 440,
           "height": 364
         }
-      ]
+      ],
+      "decision": "low_resolution"
     },
     {
       "key": "키움:박찬혁",
@@ -3771,7 +4025,8 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "롯데:신동건",
@@ -3785,7 +4040,8 @@
           "width": 624,
           "height": 574
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "두산:김주오",
@@ -3799,7 +4055,8 @@
           "width": 1000,
           "height": 1500
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "한화:오재원",
@@ -3813,7 +4070,8 @@
           "width": 570,
           "height": 720
         }
-      ]
+      ],
+      "decision": "approved"
     },
     {
       "key": "삼성:이호범",
@@ -3831,7 +4089,13 @@
           "width": 1000,
           "height": 1499
         }
-      ]
+      ],
+      "decision": "approved"
     }
-  ]
+  ],
+  "summary": {
+    "reviewedPlayers": 307,
+    "approvedAlternativePhotos": 244,
+    "unresolved": 48
+  }
 }

@@ -426,9 +426,15 @@
           player.fallbackImage = playerId ? 'https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/person/middle/' + photoYear + '/' + playerId + '.jpg' : null;
           player.fallbackImageSource = source?.href || (playerId ? 'https://www.koreabaseball.com/Record/Player/'
             + (player.position.endsWith('투수') ? 'Pitcher' : 'Hitter') + 'Detail/Basic.aspx?playerId=' + playerId : null);
+          const reviewedPhoto = window.KBO_NAMU_PROFILES?.players?.[player.team + ':' + player.name]?.photo;
+          const usablePhoto = reviewedPhoto && Math.min(reviewedPhoto.width, reviewedPhoto.height) >= 400;
+          if (usablePhoto) {
+            player.fallbackImage = reviewedPhoto.image;
+            player.fallbackImageSource = reviewedPhoto.source;
+          }
           if (!player.photoApproved) {
-            player.image = player.fallbackImage;
-            player.imageSource = player.fallbackImageSource;
+            player.image = usablePhoto ? reviewedPhoto.image : null;
+            player.imageSource = usablePhoto ? reviewedPhoto.source : null;
           }
         }
         const foreignPlayers = new Set([
@@ -443,10 +449,8 @@
           '한화:짐머맨', '한화:화이트', '한화:페라자',
           '키움:유토', '키움:히우라', '키움:데이비슨'
         ]);
-        const excludedPhotos = new Set(['키움:박주홍', 'LG:김진수']);
         eligiblePlayers = players.filter(player => player.image
-          && !foreignPlayers.has(player.team + ':' + player.name)
-          && !excludedPhotos.has(player.team + ':' + player.name));
+          && !foreignPlayers.has(player.team + ':' + player.name));
         renderSources();
         start();
       }
