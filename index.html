@@ -194,7 +194,7 @@
         const sources = [...new Set([original, player.image, player.fallbackImage].filter(Boolean))];
         for (const source of sources) {
           const image = await loadImage(source);
-          if (image) {
+          if (image && Math.min(image.naturalWidth, image.naturalHeight) >= 400) {
             player.image = source;
             if (source === player.fallbackImage) player.imageSource = player.fallbackImageSource;
             verifiedImages.set(player, image);
@@ -443,7 +443,7 @@
           '한화:짐머맨', '한화:화이트', '한화:페라자',
           '키움:유토', '키움:히우라', '키움:데이비슨'
         ]);
-        const excludedPhotos = new Set(['키움:박주홍', 'LG:김진수', '롯데:전민재', 'SSG:박시후']);
+        const excludedPhotos = new Set(['키움:박주홍', 'LG:김진수']);
         eligiblePlayers = players.filter(player => player.image
           && !foreignPlayers.has(player.team + ':' + player.name)
           && !excludedPhotos.has(player.team + ':' + player.name));
