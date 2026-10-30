@@ -30,7 +30,7 @@
     .player:hover { border-color: var(--red); box-shadow: 0 8px 24px #172c2510; }
     .portrait { position: relative; display: block; aspect-ratio: 1 / 1; background: repeating-linear-gradient(135deg, transparent 0 36px, #ffffff60 36px 72px), #e5ece8; overflow: hidden; }
     .player:nth-child(3) .portrait { background-color: #e9e9ef; }
-    .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 12%; position: relative; z-index: 1; }
+    .portrait img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; position: relative; z-index: 1; }
     .fallback { position: absolute; inset: 0; display: grid; place-items: center; color: #7d9185; font-size: 36px; font-weight: 900; }
     .info { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 20px; }
     .name { font-size: 23px; font-weight: 900; display: block; overflow-wrap: anywhere; }
@@ -191,10 +191,15 @@
           url.search = '';
           original = url.href;
         }
-        const sources = [...new Set([original, player.image].filter(Boolean))];
+        const sources = [...new Set([original, player.image, player.fallbackImage].filter(Boolean))];
         for (const source of sources) {
           const image = await loadImage(source);
-          if (image) { player.image = source; verifiedImages.set(player, image); return true; }
+          if (image) {
+            player.image = source;
+            if (source === player.fallbackImage) player.imageSource = player.fallbackImageSource;
+            verifiedImages.set(player, image);
+            return true;
+          }
         }
         return false;
       }
@@ -412,6 +417,20 @@
       }
       }
       function initialize() {
+        const photoYear = window.KBO_ROSTER.date.slice(0, 4);
+        for (const player of players) {
+          const profile = window.KBO_PROFILES.players[player.team + ':' + player.name + ':' + player.number] || getProfile(player);
+          const source = (profile.sources || []).map(value => new URL(value)).find(url =>
+            url.hostname === 'www.koreabaseball.com' && url.searchParams.has('playerId'));
+          const playerId = player.id || source?.searchParams.get('playerId');
+          player.fallbackImage = playerId ? 'https://6ptotvmi5753.edge.naverncp.com/KBO_IMAGE/person/middle/' + photoYear + '/' + playerId + '.jpg' : null;
+          player.fallbackImageSource = source?.href || (playerId ? 'https://www.koreabaseball.com/Record/Player/'
+            + (player.position.endsWith('투수') ? 'Pitcher' : 'Hitter') + 'Detail/Basic.aspx?playerId=' + playerId : null);
+          if (!player.photoApproved) {
+            player.image = player.fallbackImage;
+            player.imageSource = player.fallbackImageSource;
+          }
+        }
         const foreignPlayers = new Set([
           'KT:스기모토', 'KT:대니엘', 'KT:로건', 'KT:힐리어드',
           '삼성:페덱', '삼성:사토시', '삼성:후라도', '삼성:디아즈',
@@ -424,10 +443,8 @@
           '한화:짐머맨', '한화:화이트', '한화:페라자',
           '키움:유토', '키움:히우라', '키움:데이비슨'
         ]);
-        const excludedPhotos = new Set(['삼성:김재혁']);
         eligiblePlayers = players.filter(player => player.image
-          && !foreignPlayers.has(player.team + ':' + player.name)
-          && !excludedPhotos.has(player.team + ':' + player.name));
+          && !foreignPlayers.has(player.team + ':' + player.name));
         renderSources();
         start();
       }
