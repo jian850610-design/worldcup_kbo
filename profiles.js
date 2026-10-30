@@ -140,6 +140,10 @@ window.KBO_PROFILES = {
       birthDate: '1999-06-03', heightCm: 184,
       sources: ['https://namu.wiki/w/이창용(야구선수)']
     },
+    '삼성:김현준': {
+      birthDate: '2002-10-11', heightCm: 178,
+      sources: ['https://namu.wiki/w/김현준(2002년 10월)']
+    },
     '삼성:김재혁': {
       birthDate: '1999-12-26', heightCm: 182, mbti: 'ESFP',
       sources: ['https://namu.wiki/w/김재혁(야구선수)']
@@ -275,6 +279,30 @@ window.KBO_PROFILES = {
       awards: ['2017 KBO MVP · 한국시리즈 MVP · 투수 골든글러브'],
       season2026: { type: 'Pitcher', games: 26, era: '4.19', wins: 12, losses: 6, strikeouts: 85, innings: '124 2/3' },
       sources: ['https://namu.wiki/w/양현종', 'https://namu.wiki/w/양현종/선수 경력/2026년']
+    },
+    'KIA:박민': {
+      birthDate: '2001-06-05', heightCm: 184,
+      sources: ['https://namu.wiki/w/박민']
+    },
+    'KIA:변우혁': {
+      birthDate: '2000-03-18', heightCm: 185, bloodType: 'O형',
+      sources: ['https://namu.wiki/w/변우혁']
+    },
+    'KIA:하주석': {
+      birthDate: '1994-02-25', heightCm: 185,
+      sources: ['https://namu.wiki/w/하주석']
+    },
+    'KIA:황대인': {
+      birthDate: '1996-02-10', heightCm: 175, bloodType: 'B형',
+      sources: ['https://namu.wiki/w/황대인']
+    },
+    'KIA:박정우': {
+      birthDate: '1998-02-01', heightCm: 175, mbti: 'ESFP',
+      sources: ['https://namu.wiki/w/박정우(1998)']
+    },
+    'KIA:김호령': {
+      birthDate: '1992-04-30', heightCm: 178,
+      sources: ['https://namu.wiki/w/김호령']
     }
   }
 };
