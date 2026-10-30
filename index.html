@@ -86,10 +86,12 @@
     <section class="match" id="match" aria-label="선수 대결"></section>
     <section class="winner" id="winner" aria-label="우승 결과" hidden></section>
     <div class="bottom"><span class="count" id="count"></span><button class="undo" id="undo" type="button" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 4-6 6 6 6M3 10h10a7 7 0 0 1 7 7v3"/></svg>선택 취소</button></div>
-    <footer>프로필·기록: 나무위키 · 사진: 원문별 출처 · 비공식 팬 게임<details><summary>선수 정보·사진 확인 출처 · 2026-10-28</summary><ul id="sources"></ul></details></footer>
+    <footer>기본 프로필·정규시즌 기록: KBO · 추가 프로필: 나무위키 · 사진: 원문별 출처 · 비공식 팬 게임<details><summary>선수 정보 출처 · KBO 2026-10-12 · 나무위키 2026-10-30</summary><ul id="sources"></ul></details></footer>
   </main>
   <script src="roster.js"></script>
   <script src="profiles.js"></script>
+  <script src="official-profiles.js"></script>
+  <script src="namu-profiles.js"></script>
   <script>
     (() => {
       'use strict';
@@ -203,8 +205,16 @@
         return frame;
       }
       function getProfile(player) {
-        return window.KBO_PROFILES.players[player.team + ':' + player.name + ':' + player.number]
+        const base = window.KBO_PROFILES.players[player.team + ':' + player.name + ':' + player.number]
           || window.KBO_PROFILES.players[player.team + ':' + player.name] || {};
+        const official = window.KBO_VERIFIED_PROFILES.players[player.team + ':' + player.name] || {};
+        const namu = window.KBO_NAMU_PROFILES.players[player.team + ':' + player.name] || {};
+        return {
+          ...base,
+          ...official,
+          ...namu,
+          sources: [...new Set([...(official.sources || []), namu.source, ...(base.sources || [])].filter(Boolean))]
+        };
       }
       function profileDetails(player) {
         const profile = getProfile(player);
@@ -217,7 +227,8 @@
         function row(block, label, value) {
           const line = document.createElement('span'); line.className = 'detail-row';
           const key = document.createElement('span'); key.className = 'detail-label'; key.textContent = label;
-          const text = document.createElement('span'); text.className = 'detail-value'; text.textContent = value ?? '미확인';
+          const text = document.createElement('span'); text.className = 'detail-value';
+          text.textContent = value ?? (profile.pageStatus === 'not_found' ? '문서 확인 불가' : '나무위키 미기재');
           line.append(key, text); block.append(line);
         }
         const basics = section('프로필');
@@ -229,6 +240,7 @@
         }
         row(basics, '나이', age === null ? null : '만 ' + age + '세');
         row(basics, '키', profile.heightCm ? profile.heightCm + ' cm' : null);
+        row(basics, '체중', profile.weightKg ? profile.weightKg + ' kg' : null);
         row(basics, '혈액형', profile.bloodType);
         row(basics, 'MBTI', profile.mbti);
         row(basics, '가족관계', profile.family);
@@ -385,7 +397,8 @@
           item.append(wiki);
         }
         for (const [index, url] of (getProfile(player).sources || []).entries()) {
-          const source = document.createElement('a'); source.textContent = index ? '나무위키 기록' : '나무위키 프로필';
+          const source = document.createElement('a');
+          source.textContent = url.includes('koreabaseball.com') ? 'KBO 프로필·기록' : url.includes('namu.wiki') ? '나무위키 프로필' : index ? '나무위키 기록' : '나무위키 프로필';
           source.href = url; source.target = '_blank'; source.rel = 'noopener noreferrer';
           item.append(source);
         }
