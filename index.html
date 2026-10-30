@@ -56,7 +56,9 @@
     .winner h2 { font-size: 32px; margin: 0 0 8px; }
     .winner .position { margin-bottom: 24px; }
     .selection { position: absolute; inset: 0; z-index: 10; display: flex; justify-content: center; align-items: flex-start; background: #f5f7f6; }
+    .selection-frame { display: flex; flex: 0 0 auto; flex-direction: column; align-items: center; }
     .selection .portrait { flex: 0 0 auto; background: transparent; }
+    .selection .player-name { margin-top: 8px; padding: 7px 12px; border-radius: 4px; background: rgba(25, 34, 30, .88); color: #fff; font-size: 18px; font-weight: 700; line-height: 1.2; white-space: nowrap; }
     .restart { border: 0; border-radius: 4px; background: var(--red); color: #fff; padding: 13px 22px; font-weight: 700; }
     footer { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 16px; color: var(--muted); font-size: 10px; line-height: 1.8; }
     footer details { margin-top: 8px; }
@@ -96,7 +98,7 @@
     <div class="bottom"><span class="count" id="count"></span><button class="undo" id="undo" type="button" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 4-6 6 6 6M3 10h10a7 7 0 0 1 7 7v3"/></svg>선택 취소</button></div>
     <footer>기본 프로필·정규시즌 기록: KBO · 추가 프로필: 나무위키 · 사진: 원문별 출처 · 비공식 팬 게임<details><summary>선수 정보 출처 · KBO 2026-10-12 · 나무위키 2026-10-30</summary><ul id="sources"></ul></details></footer>
   </main>
-  <script src="roster.js?v=20261030-allstar-trophy"></script>
+  <script src="roster.js?v=20261030-jeonsamin-tv"></script>
   <script src="profiles.js"></script>
   <script src="official-profiles.js"></script>
   <script src="namu-profiles.js"></script>
@@ -295,7 +297,9 @@
         const scale = Math.min(1.5, byId('match').clientWidth / origin.width);
         photo.style.width = origin.width * scale + 'px';
         photo.style.height = origin.height * scale + 'px';
-        selection.replaceChildren(photo);
+        const name = document.createElement('span'); name.className = 'player-name'; name.textContent = player.name;
+        const frame = document.createElement('div'); frame.className = 'selection-frame'; frame.append(photo, name);
+        selection.replaceChildren(frame);
         selection.hidden = false;
         byId('undo').disabled = true;
         byId('match').querySelectorAll('button').forEach(button => { button.disabled = true; });

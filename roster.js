@@ -206,6 +206,7 @@ window.KBO_ROSTER = {
     ['롯데', '김원중', 'https://imgnews.naver.net/image/109/2017/12/05/0003675149_001_20171205145701138.jpg', 'https://news.naver.com/main/read.naver?oid=109&aid=0003675149'],
     ['롯데', '유강남', 'https://imgnews.naver.net/image/410/2017/11/28/0000422008_001_20171128211043727.jpg', 'https://news.naver.com/main/read.naver?oid=410&aid=0000422008'],
     ['KIA', '박종혁', 'https://imgnews.pstatic.net/image/117/2026/07/10/0004083711_001_20260710200308263.jpg?type=w647', 'https://m.sports.naver.com/kbaseball/article/117/0004083711'],
+    ['NC', '전사민', 'https://i.ytimg.com/vi/jgWiE30G07g/maxresdefault.jpg', 'https://www.youtube.com/watch?v=jgWiE30G07g'],
     ['NC', '이재학', 'https://imgnews.naver.net/image/382/2013/11/04/57116813.2_59_20131104145702.jpg', 'https://news.naver.com/main/read.naver?oid=382&aid=0000142810'],
     ['NC', '박민우', 'https://imgnews.naver.net/image/5361/2014/12/03/l_2014120301000249300014461_99_20141203195005.jpg', 'https://www.sportsseoul.com/?c=v&m=n&i=147805'],
     ['NC', '김주원', 'https://imgnews.naver.net/image/5820/2025/12/04/0000156006_001_20251204150416389.jpg', 'https://www.job-post.co.kr/news/articleView.html?idxno=194323'],
@@ -219,7 +220,7 @@ window.KBO_ROSTER = {
     '한화:노시환', '한화:강백호', '삼성:구자욱', '삼성:원태인',
     'KT:배제성', 'LG:임찬규', 'LG:박동원', 'LG:박해민', 'LG:홍창기',
     '두산:정수빈', '두산:조수행', 'SSG:박성한', 'SSG:김재환',
-    '롯데:전준우', '롯데:한동희', '롯데:김원중', 'NC:박민우', 'NC:권희동'
+    '롯데:전준우', '롯데:한동희', '롯데:김원중', 'NC:박민우', 'NC:권희동', 'NC:전사민'
   ],
   foreignPlayers: [
     'KT:스기모토', 'KT:대니엘', 'KT:로건', 'KT:힐리어드',
