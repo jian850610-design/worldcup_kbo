@@ -96,15 +96,20 @@
     </div>
     <section class="winner" id="winner" aria-label="우승 결과" hidden></section>
     <div class="bottom"><span class="count" id="count"></span><button class="undo" id="undo" type="button" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 4-6 6 6 6M3 10h10a7 7 0 0 1 7 7v3"/></svg>선택 취소</button></div>
-    <footer>기본 프로필·정규시즌 기록: KBO · 추가 프로필: 나무위키 · 사진: 원문별 출처 · 비공식 팬 게임<details><summary>선수 정보 출처 · KBO 2026-10-12 · 나무위키 2026-10-30</summary><ul id="sources"></ul></details></footer>
+    <footer>기본 프로필·정규시즌 기록: KBO · 추가 프로필·연봉: 나무위키 · 사진: 원문별 출처 · 비공식 팬 게임<details><summary>선수 정보 출처 · KBO 2026-10-12 · 나무위키 2026-11-06</summary><ul id="sources"></ul></details></footer>
   </main>
   <script src="roster.js?v=20261030-jeonsamin-tv"></script>
   <script src="profiles.js"></script>
   <script src="official-profiles.js"></script>
   <script src="namu-profiles.js"></script>
+    <script src="salary-profiles.js"></script>
   <script>
     (() => {
       'use strict';
+      const salaries = Object.fromEntries(window.KBO_SALARIES.trim().split('\n').map(entry => {
+        const [key, year, amount] = entry.split('|');
+        return [key, { year, amount }];
+      }));
       const curatedPlayers = [
         { name: '김도영', position: 'KIA · 내야수', id: 52605, wiki: '김도영_(2003년)', type: 'Hitter', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_5_C.png', imageSource: 'https://tigers.co.kr/players/infielder/52605' },
         { name: '양현종', position: 'KIA · 투수', id: 77637, wiki: '양현종', type: 'Pitcher', image: 'https://tigers.co.kr/files/playerImg/tigersImg2/2026_54_C.png', imageSource: 'https://tigers.co.kr/players/pitcher/77637' },
@@ -229,7 +234,7 @@
           ...base,
           ...official,
           ...namu,
-          sources: [...new Set([...(official.sources || []), namu.source, ...(base.sources || [])].filter(Boolean))]
+          sources: [...new Set([...(official.sources || []), namu.source || namu.photo?.source, ...(base.sources || [])].filter(Boolean))]
         };
       }
       function profileDetails(player) {
@@ -248,6 +253,8 @@
           line.append(key, text); block.append(line);
         }
         const basics = section('프로필');
+        const salary = salaries[player.team + ':' + player.name];
+        row(basics, '연봉(' + salary.year + ')', salary.amount);
         let age = null;
         if (profile.birthDate) {
           const [birthYear, birthMonth, birthDay] = profile.birthDate.split('-').map(Number);
@@ -486,7 +493,7 @@
           '한화:짐머맨', '한화:화이트', '한화:페라자',
           '키움:유토', '키움:히우라', '키움:데이비슨'
         ]);
-        eligiblePlayers = players.filter(player => player.image
+        eligiblePlayers = players.filter(player => player.image && salaries[player.team + ':' + player.name]
           && !foreignPlayers.has(player.team + ':' + player.name));
         renderSources();
         start();
